@@ -22,6 +22,6 @@ Description of npm scripts:
   Builds the project into the `/dist` directory and watches for changes. Not optimized, but quicker.
 
 * `npm run start` <br>
-  Starts a development server running on `localhost:8080` serving the built `/dist` directory. Watches for changes and automatically reloads. Built files are not optimizes.
+  Starts a development server running on `localhost:8080` serving the built `/dist` directory. Watches for changes and automatically reloads. Built files are not optimized.
 
 ## Be nice and lint!
