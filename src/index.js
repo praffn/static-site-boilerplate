@@ -1,18 +1,45 @@
 import './scss/style.scss';
 
-const stuff = [
-  28,
-  'es6',
-  false,
-  'works',
-  { hello: 'world' },
-  'flawlessy',
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-  '!',
-];
+function timeout(delay = 2000) {
+  return (target, key, descriptor) => {
+    const originalMethod = descriptor.value;
+    return {
+      ...descriptor,
+      value(...args) {
+        setTimeout(() => {
+          originalMethod.apply(this, args);
+        }, delay);
+      },
+    };
+  };
+}
 
-const myString =
-  stuff.filter(item => typeof item === 'string')
-  .join(' ');
+function arrayToStringList(arr) {
+  return arr.join(', ');
+}
 
-console.log(myString); // eslint-disable-line
+class Person {
+  friends = [];
+  name;
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  addFriend(friend) {
+    this.friends.push(friend);
+  }
+
+  @timeout(500);
+  greet() {
+    console.log(`Heyo, I'm ${this.name} with my friends ${arrayToStringList(this.friends)}`); // eslint-disable-line
+  }
+}
+
+const person = new Person('Dr. Ecma S. Cript');
+person.addFriend('ES2015');
+person.addFriend('Object Rest Spread');
+person.addFriend('Class Properties');
+person.addFriend('Decorators');
+
+person.greet();

@@ -1,39 +1,39 @@
 {
-  "name": "doro-landingpage",
-  "version": "1.0.0",
-  "description": "",
+  "name": "static-site-boilerplate",
+  "version": "2.0.0",
+  "description": "A boilerplate for static sites, using webpack, es6 and scss",
   "main": "index.js",
-  "scripts": {
-    "lint": "eslint webpack.config.js",
-    "build": "webpack --progress --colors --p",
-    "build:dev": "webpack --progress --colors",
-    "watch": "webpack --progress --colors --watch",
-    "start": "webpack-dev-server --inline"
-  },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/praffn/doro-landingpage.git"
+    "url": "git@github.com:praffn/static-site-boilerplate.git",
+    "type": "git"
   },
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "start": "webpack-dev-server --inline",
+    "build": "webpack --progress --colors -p",
+    "build:dev": "webpack --progress --colors",
+    "lint": "eslint src"
+  },
+  "author": "Phillip Raffnsøe <phillip@praffn.dk>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/praffn/doro-landingpage/issues"
-  },
-  "homepage": "https://github.com/praffn/doro-landingpage#readme",
   "devDependencies": {
-    "babel-core": "^6.14.0",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2015": "^6.14.0",
-    "css-loader": "^0.25.0",
-    "eslint": "^3.5.0",
-    "eslint-config-airbnb-base": "^7.1.0",
-    "eslint-plugin-import": "^1.14.0",
+    "babel-core": "^6.22.1",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-class-properties": "^6.22.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "html-webpack-plugin": "^2.22.0",
-    "node-sass": "^3.9.3",
-    "sass-loader": "^4.0.2",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.1"
+    "html-webpack-plugin": "^2.26.0",
+    "node-sass": "^4.3.0",
+    "sass-loader": "^4.1.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }
