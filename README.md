@@ -1,27 +1,28 @@
-# static-site-boilerplate
-###### webpack-based static site boilerplate for easy sass and es6 websites!
+# 👷 static-site-boilerplate 🚧
 
----------------------------------------------
+static-site-boilerplate is a starting point for creating modern static websites with the following features:
 
-Before use run `npm install` to install all dependencies.
+* Module bundling with [webpack](https://github.com/webpack/webpack)
+* Modern ES2015 javascript with [babel](https://github.com/babel/babel)
+* Even more modern ES2017 features like decorators, object rest spread operator and class properties.
+* CSS with [Sass](https://github.com/sass/sass)
+* Worlds best JS linting with [eslint](https://github.com/eslint/eslint), using Airbnb's excellent [style guide](https://github.com/airbnb/javascript)
 
-`static-site-boilerplate` uses [webpack](https://webpack.github.io/) to bundle javascript as well as sass-files. [Babel](https://babeljs.io/) is used to transpile es6 into es5.
+----------------
 
-Description of npm scripts:
+## How to use
+Clone this repository and run `npm install` (or highly recommended: `yarn`).
 
-* `npm run lint` <br>
-  Lints the entire `/src` directory.
+### npm commands:
 
-* `npm run build` <br>
-  Builds the production ready code into the `/dist` directory.
+* `npm start` <br>
+  Starts a development server running on `localhost:8080`. Automatically watches for changes, recompiles and autoreloads 👍
+
+* `npm build` <br>
+  Builds the entire project, optimizing it along the way. Built files are located in the `dist` directory.
 
 * `npm run build:dev` <br>
-  Builds the entire project into the `/dist` directory. Not optimized, but quicker.
+  Builds the project, but no optimizations are done.
 
-* `npm run watch` <br>
-  Builds the project into the `/dist` directory and watches for changes. Not optimized, but quicker.
-
-* `npm run start` <br>
-  Starts a development server running on `localhost:8080` serving the built `/dist` directory. Watches for changes and automatically reloads. Built files are not optimized.
-
-## Be nice and lint!
+* `npm run lint` <br>
+  Lints all files in `src`, because linting is awesome and helps you produce better code 🎉
