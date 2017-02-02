@@ -1,5 +1,6 @@
 const path = require('path');
 
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -12,27 +13,50 @@ module.exports = {
   entry: './index.js',
   output: {
     path: outputPath,
-    filename: '[hash].js',
+    filename: 'bundle.[hash].js',
   },
 
   module: {
     loaders: [
-      // transpiles es6
+      /**
+       * Loader for .js files
+       * Uses babel with es-2015 preset (check .babelrc)
+       */
       {
-        test: /.js$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel',
       },
-      // compiles sass
+      /**
+       * Loader for sass files
+       * Extracts the text instead of inlining it
+       */
       {
-        test: /.scss$/,
+        test: /\.scss$/,
         loader: ExtractTextPlugin.extract(['css', 'sass']),
+      },
+      /**
+       * Loader for images.
+       * When building it adds them to the assets/images directory
+       */
+      {
+        test: /\.(png|jpe?g|gif|webp)$/,
+        loader: 'file?name=assets/images/[name].[hash].[ext]',
+      },
+      /**
+       * Loader for html files
+       * Looks for sources and loads them with the appropriate loader
+       */
+      {
+        test: /\.html$/,
+        loader: 'html',
       },
     ],
   },
 
   plugins: [
-    new ExtractTextPlugin('style.css'),
+    new DashboardPlugin(),
+    new ExtractTextPlugin('style.[hash].css'),
     new HtmlPlugin({
       template: './index.html',
     }),

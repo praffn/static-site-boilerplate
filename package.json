@@ -8,10 +8,10 @@
     "type": "git"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline",
+    "start": "webpack-dashboard -- webpack-dev-server --inline",
     "build": "webpack --progress --colors -p",
     "build:dev": "webpack --progress --colors",
-    "lint": "eslint src"
+    "lint": "eslint src",
   },
   "author": "Phillip Raffnsøe <phillip@praffn.dk>",
   "license": "MIT",
@@ -30,10 +30,13 @@
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.10.0",
+    "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.26.0",
     "node-sass": "^4.3.0",
     "sass-loader": "^4.1.1",
     "webpack": "^1.14.0",
+    "webpack-dashboard": "^0.3.0",
     "webpack-dev-server": "^1.16.2"
   }
 }
