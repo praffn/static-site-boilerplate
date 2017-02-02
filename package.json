@@ -1,6 +1,6 @@
 {
   "name": "static-site-boilerplate",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A boilerplate for static sites, using webpack, es6 and scss",
   "main": "index.js",
   "repository": {
