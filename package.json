@@ -8,9 +8,9 @@
     "type": "git"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline",
-    "build": "webpack --progress --colors -p",
-    "build:dev": "webpack --progress --colors",
+    "start": "webpack-dashboard -- webpack-dev-server --inline --config webpack/config.development",
+    "build": "webpack --progress --colors --config webpack/config.production -p",
+    "build:dev": "webpack --progress --colors --config webpack/config.development",
     "lint": "eslint src"
   },
   "author": "Phillip Raffnsøe <phillip@praffn.dk>",
@@ -29,11 +29,16 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "file-loader": "^0.10.0",
+    "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.26.0",
     "node-sass": "^4.3.0",
     "sass-loader": "^4.1.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
-  }
+    "webpack": "^2.2.1",
+    "webpack-dashboard": "^0.3.0",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^2.6.1"
+  },
+  "dependencies": {}
 }
