@@ -11,7 +11,7 @@
     "start": "webpack-dashboard -- webpack-dev-server --inline",
     "build": "webpack --progress --colors -p",
     "build:dev": "webpack --progress --colors",
-    "lint": "eslint src",
+    "lint": "eslint src"
   },
   "author": "Phillip Raffnsøe <phillip@praffn.dk>",
   "license": "MIT",
