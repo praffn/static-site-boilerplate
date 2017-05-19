@@ -24,4 +24,7 @@ Description of npm scripts:
 * `npm run start` <br>
   Starts a development server running on `localhost:8080` serving the built `/dist` directory. Watches for changes and automatically reloads. Built files are not optimized.
 
+* `npm run clean` <br>
+  Removes built files
+
 ## Be nice and lint!
